@@ -3,7 +3,6 @@
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-import pandas as pd
 import tkinter as tk
 from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.common.by import By
@@ -11,11 +10,13 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
+#輸入電話
 def onOK():
     global a 
     a = (format(entry.get()))
     window.destroy()
 
+   #輸入電話視窗
 window = tk.Tk()
 window.title("phonenumber")
 window.geometry("300x100+250+150")
@@ -31,7 +32,7 @@ button =tk.Button(window,text = 'ok', command= onOK)
 button.pack()
 
 window.mainloop()
-
+#webdriver
 PATH = "D:/python/chromedriver/chromedriver.exe"
 driver = webdriver.Chrome(PATH)
 
@@ -54,7 +55,7 @@ WebDriverWait(driver, 10).until(
 sendmessage = driver.find_element_by_xpath("/html/body/table/tbody/tr[4]/td/table/tbody/tr/td[1]/table/tbody/tr[3]/td[1]/table/tbody/tr[1]/td/table/tbody/tr[2]/td/table/tbody/tr[7]/td/div/a/img")
 sendmessage.click()
 
-#input number
+#輸入電話
 
 WebDriverWait(driver, 10).until(
     EC.presence_of_element_located((By.XPATH, "/html/body/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr/td/div/table/tbody/tr[1]/td/table/tbody/tr[3]/td[2]/form/table/tbody/tr[2]/td/fieldset/table/tbody/tr[1]/td/fieldset/table/tbody/tr[3]/td[2]/textarea"))
@@ -63,7 +64,8 @@ WebDriverWait(driver, 10).until(
 phoneno = driver.find_element_by_xpath("/html/body/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr/td/div/table/tbody/tr[1]/td/table/tbody/tr[3]/td[2]/form/table/tbody/tr[2]/td/fieldset/table/tbody/tr[1]/td/fieldset/table/tbody/tr[3]/td[2]/textarea")
 phoneno.send_keys(a)
 
-#Submit /join
+#加入電話
+
 submit = driver.find_element_by_xpath("/html/body/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr/td/div/table/tbody/tr[1]/td/table/tbody/tr[3]/td[2]/form/table/tbody/tr[2]/td/fieldset/table/tbody/tr[1]/td/fieldset/table/tbody/tr[3]/td[3]/input")
 submit.click()
 
@@ -75,6 +77,8 @@ pas = driver.find_element_by_xpath("/html/body/table/tbody/tr[4]/td/table/tbody/
 pas.click()
 
 prompt.accept()
+
+#傳送
 
 WebDriverWait(driver, 10).until(
     EC.presence_of_element_located((By.XPATH, "/html/body/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr/td/div/table/tbody/tr[1]/td/table/tbody/tr[3]/td[2]/form/fieldset/center/input[1]"))
