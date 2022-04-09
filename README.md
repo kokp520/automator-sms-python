@@ -1,4 +1,4 @@
-# Send message
+# Automatic messaging
 
 Assist with automatic text messaging  
 (for my work place to send message when we finish the Gogoro maintenance)
