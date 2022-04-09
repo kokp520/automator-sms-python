@@ -39,9 +39,9 @@ driver = webdriver.Chrome(PATH)
 #登入
 driver.get("https://www.kotsms.com.tw/index.php")
 user = driver.find_element_by_id("usernames")
-user.send_keys("**") #enter your username.
+user.send_keys("USERNAME") #enter your username.
 user2 = driver.find_element_by_id("passwords")
-user2.send_keys("********") #enter your password.
+user2.send_keys("PASSWORD") #enter your password.
 user2.send_keys(Keys.RETURN)
 
 prompt = Alert(driver)
@@ -71,7 +71,7 @@ submit.click()
 
 #訊息內容
 msgbox = driver.find_element_by_xpath("/html/body/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr/td/div/table/tbody/tr[1]/td/table/tbody/tr[3]/td[2]/form/table/tbody/tr[3]/td/fieldset/table/tbody/tr[1]/td/textarea")
-msgbox.send_keys("GOGORO大安潮州服務中心您好，你的車輛已完工，因電話無人接聽，故傳簡訊通知，請於營業時間(早上0900-晚上2100)來取車，謝謝，祝您順心。電話:(02)23581077")
+msgbox.send_keys("您的車輛已經完工...")
 
 pas = driver.find_element_by_xpath("/html/body/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr/td/div/table/tbody/tr[1]/td/table/tbody/tr[3]/td[2]/form/table/tbody/tr[6]/td/input")
 pas.click()
